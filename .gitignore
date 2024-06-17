@@ -3,5 +3,6 @@
 /output/*
 /input/*
 !/input/input.txt
+!/input/Example Input Data From Web
 /archive/*
-excel_template.xlsx
+tool_chain/excel_template.xlsx
