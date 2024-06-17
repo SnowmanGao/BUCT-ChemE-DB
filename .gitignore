@@ -1,0 +1,7 @@
+/.ipynb_checkpoints/
+/data/*
+/output/*
+/input/*
+!/input/input.txt
+/archive/*
+excel_template.xlsx
