@@ -1,5 +1,5 @@
 from enum import Enum, unique
-from typing import TypedDict, NotRequired
+from typing import TypedDict, NotRequired, Optional
 
 
 @unique
@@ -30,7 +30,11 @@ class Question:
         return (sd["type"] == od["type"]
                 and sd["desc"] == od["desc"]
                 and self.get_answer_str_set()
-                == other.get_answer_str_set())
+                == other.get_answer_str_set()
+                and sd.get("solution") == od.get("solution")
+                and sd.get("note") == od.get("note")
+                and sd.get("tag") == od.get("tag")
+                )
 
     def get_choices_str_set(self) -> set[str]:
         return {*self.data["choices"]}
@@ -38,8 +42,8 @@ class Question:
     def get_desc(self) -> str:
         return self.data["desc"]
 
-    def get_solution[T](self, default="") -> str:
-        return self.data.get("solution", default)
+    def get_solution(self) -> Optional[str]:
+        return self.data.get("solution")
 
     def get_answer_str_set(self) -> set[str]:
         data = self.data

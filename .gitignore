@@ -2,7 +2,11 @@
 /data/*
 /output/*
 /input/*
-!/input/input.txt
-!/input/Example Input Data From Web
-/archive/*
+!/input/Example Input Data From Web.txt
 tool_chain/excel_template.xlsx
+tool_chain/solutions.xlsx
+/archive/questions/*
+/archive/solutions/figures/*.png
+!/archive/questions/example.json
+/archive/questions.zip
+/archive/cached_pics

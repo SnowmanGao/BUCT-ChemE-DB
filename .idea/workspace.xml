@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6a9d922-4e0a-4824-a762-687164c6ec9b" name="更改" comment="1.0 Basic Functions">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input/Example Input Data From Web" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool_chain/excel_template_query.odc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tool_chain/plugin_for_tampermonkey.js" afterDir="false" />
+    <list default="true" id="b6a9d922-4e0a-4824-a762-687164c6ec9b" name="更改" comment="1.1 Improve ToolChain">
+      <change afterPath="$PROJECT_DIR$/.idea/BUCT-ChemE-DB.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/archive/questions/example.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/data_washer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool_chain/solution_reader.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tool_chain/temp.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/exporter.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/exporter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/importer.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/importer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/question_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/question_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/Example Input Data From Web" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input/Example Input Data From Web.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,11 +30,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -38,41 +53,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "FileHistory.git4idea.history.GitHistoryProvider_flatOrder0": "0",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatOrder1": "1",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatOrder2": "2",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatOrder3": "3",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatWidth0": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatWidth1": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatWidth2": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_flatWidth3": "353",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeOrder0": "0",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeOrder1": "1",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeOrder2": "2",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeOrder3": "3",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeWidth0": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeWidth1": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeWidth2": "354",
-    "FileHistory.git4idea.history.GitHistoryProvider_treeWidth3": "353",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "E:/ProgramImportant/PUBLIC/python/BUCT-ChemE-DB",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatOrder0&quot;: &quot;0&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatOrder1&quot;: &quot;1&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatOrder2&quot;: &quot;2&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatOrder3&quot;: &quot;3&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatWidth0&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatWidth1&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatWidth2&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_flatWidth3&quot;: &quot;353&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeOrder0&quot;: &quot;0&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeOrder1&quot;: &quot;1&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeOrder2&quot;: &quot;2&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeOrder3&quot;: &quot;3&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeWidth0&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeWidth1&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeWidth2&quot;: &quot;354&quot;,
+    &quot;FileHistory.git4idea.history.GitHistoryProvider_treeWidth3&quot;: &quot;353&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ProgramImportant/PUBLIC/python/BUCT-ChemE-DB/archive/solutions/figures&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\ProgramImportant\PUBLIC\python\BUCT-ChemE-DB\archive\solutions\figures" />
+      <recent name="E:\ProgramImportant\PUBLIC\python\BUCT-ChemE-DB\archive\questions" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\ProgramImportant\PUBLIC\python\BUCT-ChemE-DB\tool_chain" />
+      <recent name="E:\ProgramImportant\PUBLIC\python\BUCT-ChemE-DB\archive\questions" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -88,7 +108,11 @@
       <workItem from="1718614929493" duration="506000" />
       <workItem from="1718615438482" duration="330000" />
       <workItem from="1718615771046" duration="295000" />
-      <workItem from="1718630107924" duration="1813000" />
+      <workItem from="1718630107924" duration="1921000" />
+      <workItem from="1718688001112" duration="24746000" />
+      <workItem from="1718714834846" duration="447000" />
+      <workItem from="1718715874581" duration="363000" />
+      <workItem from="1718717797093" duration="595000" />
     </task>
     <task id="LOCAL-00001" summary="1.1 Fix Bugs">
       <option name="closed" value="true" />
@@ -106,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718616047048</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1.1 Improve ToolChain">
+      <option name="closed" value="true" />
+      <created>1718633243806</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718633243806</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,6 +150,7 @@
     </ignored-roots>
     <MESSAGE value="1.1 Fix Bugs" />
     <MESSAGE value="1.0 Basic Functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0 Basic Functions" />
+    <MESSAGE value="1.1 Improve ToolChain" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.1 Improve ToolChain" />
   </component>
 </project>

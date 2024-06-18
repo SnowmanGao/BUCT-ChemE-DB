@@ -88,7 +88,7 @@ class Importer:
             if part == "": raise ValueError("无效的章节名称！")
         result = {"part": part, "questions": questions}
 
-        path = f"./data/{result["part"]}.json"
+        path = f"./archive/questions/{result["part"]}.json"
         if not overwrite and os.path.exists(path):
             if ask:
                 if input("文件已存在，是否覆盖？(y/n)") == "y":

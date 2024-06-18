@@ -1,0 +1,39 @@
+{
+    "part": "Example Question Data of *The Archive*",
+    "questions": [
+        {
+            "desc": "[Type=1] Which of the following runs fastest?",
+            "type": 1,
+            "choices": [
+                "snail",
+                "horse",
+                "car",
+                "plane"
+            ],
+            "answer_idx": 3
+        },
+        {
+            "desc": "[Type=2] Which songs are sang by Adele?",
+            "type": 2,
+            "choices": [
+                "Rolling in the Deep",
+                "Love Story",
+                "Blank Space",
+                "Someone Like You"
+            ],
+            "answer_idx": [
+                0,
+                3
+            ]
+        },
+        {
+            "desc": "[Type=3] Does light runs faster than sound?",
+            "type": 3,
+            "choices": [
+                "False",
+                "True"
+            ],
+            "answer_idx": 1
+        }
+    ]
+}
