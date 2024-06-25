@@ -2,9 +2,10 @@
 /data/*
 /output/*
 /input/*
-!/input/Example Input Data From Web.txt
-tool_chain/excel_template.xlsx
-tool_chain/solutions.xlsx
+!/input/Example Input Data.txt
+/tool_chain/excel_template.xlsx
+/tool_chain/solutions.xlsx
+/tool_chain/temp.ipynb
 /archive/questions/*
 /archive/solutions/figures/*.png
 !/archive/questions/example.json

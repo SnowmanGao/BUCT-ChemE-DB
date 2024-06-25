@@ -2,7 +2,7 @@
     "part": "Example Question Data of *The Archive*",
     "questions": [
         {
-            "desc": "[Type=1] Which of the following runs fastest?",
+            "desc": "[Type=1] Which of the followings runs fastest?",
             "type": 1,
             "choices": [
                 "snail",
@@ -27,7 +27,7 @@
             ]
         },
         {
-            "desc": "[Type=3] Does light runs faster than sound?",
+            "desc": "[Type=3] Does light run faster than sound?",
             "type": 3,
             "choices": [
                 "False",

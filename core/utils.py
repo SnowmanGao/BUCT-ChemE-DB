@@ -1,6 +1,7 @@
 import json
 import os
-from typing import TextIO, Callable, Any
+from datetime import date
+from typing import TextIO, Callable
 
 from overrides import overrides
 
@@ -24,6 +25,28 @@ def find_index[T, V](li: list[T], key: Callable[[T], V], target: V) -> int:
         if key(item) == target:
             return idx
     return -1
+
+
+def get_date_str(compat=False) -> str:
+    if compat:
+        return date.today().strftime("%Y/%m/%d")
+    return date.today().strftime("%Y / %m / %d")
+
+
+def inserter(source: str, insert: str, pre: str, post: str) -> str:
+    # 查找pre的起始位置
+    pre_start = source.find(pre)
+    if pre_start == -1:
+        raise ValueError(f"Pre-text '{pre}' not found in the text.")
+
+    # 查找post的起始位置，并且它必须紧跟在pre之后
+    post_start = source.find(post, pre_start)
+    if post_start == -1:
+        raise ValueError(f"Post-text '{post}' not found after pre-text '{pre}' in the text.")
+
+    # 在指定位置插入content
+    insert_index = pre_start + len(pre)
+    return source[:insert_index] + insert + source[post_start:]
 
 
 class FullList:

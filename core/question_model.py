@@ -1,5 +1,5 @@
 from enum import Enum, unique
-from typing import TypedDict, NotRequired, Optional
+from typing import TypedDict, NotRequired, Optional, Dict, List
 
 
 @unique
@@ -23,6 +23,20 @@ class QuestionModel(TypedDict):
 
 class Question:
     data: QuestionModel
+
+    def __init__(self, model: QuestionModel):
+        try:
+            # TODO: 不完善的数据检验，没检查数据类型
+            model["type"] = QuestionType(model["type"])
+            assert ("desc" in model
+                    and "type" in model
+                    and "choices" in model
+                    and "answer_idx" in model)
+            self.data = model
+        except AssertionError:
+            raise ValueError(f"给定的 QuestionModel 不符合其类型定义！\n({model})")
+        except ValueError:
+            raise ValueError(f"给定的 QuestionModel 中的 type 属性无效！\n({model})")
 
     def is_equivalent_to(self, other: "Question") -> bool:
         sd = self.data
@@ -54,17 +68,3 @@ class Question:
             return {data["choices"][indexes]}
         else:
             return {data["choices"][i] for i in indexes}
-
-    def __init__(self, model: QuestionModel):
-        try:
-            # TODO: 不完善的数据检验，没检查数据类型
-            model["type"] = QuestionType(model["type"])
-            assert ("desc" in model
-                    and "type" in model
-                    and "choices" in model
-                    and "answer_idx" in model)
-            self.data = model
-        except AssertionError:
-            raise ValueError(f"给定的 QuestionModel 不符合其类型定义！\n({model})")
-        except ValueError:
-            raise ValueError(f"给定的 QuestionModel 中的 type 属性无效！\n({model})")
