@@ -56,10 +56,6 @@ class DataWasher:
                             ques_map[ques['desc']] = (part, DataWasher._merge(boxed_a, boxed_b))
                     else:
                         ques_map[ques['desc']] = (part, ques)
-        # TODO: Enum Serializable Problem
-        for k, v in ques_map.items():
-            if isinstance(v[1]['type'], QuestionType):
-                v[1]['type'] = v[1]['type'].value
         with open(out_path, 'w') as fp:
             json_dump(DataWasher.final_mapper(ques_map), fp)
         print(f"[Info] 已导出去重后的题目到 {out_path}")

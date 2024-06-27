@@ -1,9 +1,9 @@
-from enum import Enum, unique
+from enum import IntEnum, unique
 from typing import TypedDict, NotRequired, Optional, Dict, List
 
 
 @unique
-class QuestionType(Enum):
+class QuestionType(IntEnum):
     SINGLE = 1  # 单选
     MULTIPLE = 2  # 多选
     TRUEFALSE = 3  # 判断
