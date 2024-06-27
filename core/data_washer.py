@@ -1,7 +1,7 @@
 from typing import Optional
 
-from core.utils import json_load, FullList, json_dump, find_index
-from core.question_model import Question, QuestionModel, QuestionType
+from core.utils import json_load, full_list, json_dump, find_index
+from core.question_model import Question, QuestionModel
 from core.importer import ArchiveModel
 
 
@@ -44,7 +44,7 @@ class DataWasher:
     @staticmethod
     def export_dedupe_data(folder_path: str, out_path: str):
         ques_map: dict[str, tuple[str, QuestionModel]] = {}
-        with FullList(folder_path) as fps:
+        with full_list(folder_path) as fps:
             for fp in fps:
                 obj: ArchiveModel = json_load(fp)
                 for ques in obj['questions']:
@@ -64,7 +64,7 @@ class DataWasher:
     def final_mapper(obj: dict[str, tuple[str, QuestionModel]]) -> list[ArchiveModel]:
         res: list[ArchiveModel] = []
         for k, v in obj.items():
-            idx = find_index(res, lambda x: x["part"], v[0])
+            idx = find_index(res, v[0], lambda x: x["part"])
             if idx == -1:
                 res.append({'part': v[0], 'questions': [v[1]]})
             else:

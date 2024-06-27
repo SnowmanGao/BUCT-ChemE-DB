@@ -50,14 +50,11 @@ class Question:
                 and sd.get("tag") == od.get("tag")
                 )
 
-    def get_choices_str_set(self) -> set[str]:
-        return {*self.data["choices"]}
-
     def get_desc(self) -> str:
         return self.data["desc"]
 
-    def get_solution(self) -> Optional[str]:
-        return self.data.get("solution")
+    def get_choices_str_set(self) -> set[str]:
+        return {*self.data["choices"]}
 
     def get_answer_str_set(self) -> set[str]:
         data = self.data
@@ -68,3 +65,6 @@ class Question:
             return {data["choices"][indexes]}
         else:
             return {data["choices"][i] for i in indexes}
+
+    def get_solution(self) -> Optional[str]:
+        return self.data.get("solution")
