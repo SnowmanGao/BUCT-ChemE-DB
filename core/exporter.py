@@ -18,7 +18,6 @@ def _desc_mod_for_excel(desc: str):
 
 def _desc_mod_for_md(desc: str):
     """默认的题目描述修改器，用于输出 Markdown 文档"""
-    desc = re.sub(r"#\[!(.*)]", "![$0.png](../archive/solutions/figures/$0.png)", desc)
     desc = re.sub(r"<p>(.*?)</p>", r"\1\n", desc)
     desc = re.sub(r"<img.*?id=([A-Z]+).*?title=\"(.*?)\".*?/>",
                   r"![\1](../archive/cached_pics/\1/\2)", desc)
@@ -35,6 +34,12 @@ def _choice_mod_for_md(desc: str):
     desc = desc.replace("*", "\\*")
     desc = desc.replace("^", "\\^")
     return desc
+
+
+def _solution_mod_for_md(desc: str):
+    """默认的题解修改器，用于输出 Markdown 文档"""
+    return re.sub(r"#\[!fig(.*)]",
+                  "![\\1.png](../archive/solutions/figures/fig\\1.png)", desc)
 
 
 def _title_mod_for_md():
@@ -95,6 +100,7 @@ class MarkdownExporter(ExporterBase):
     desc_modifier: Callable[[str], str] = _desc_mod_for_md
     choice_modifier: Callable[[str], str] = _choice_mod_for_md
     title_modifier: Callable[[], str] = _title_mod_for_md
+    solution_modifier: Callable[[str], str] = _solution_mod_for_md
 
     @staticmethod
     def _choice_normalize(ques: QuestionModel):
@@ -135,7 +141,8 @@ class MarkdownExporter(ExporterBase):
                 mprint(f"- [{'x' if idx in ans_idx else ' '}] {choice}")
             if "solution" in ques:
                 if ques["solution"] is not None:
-                    mprint(f"\n> 解释：\n>\n> {ques["solution"].replace('\n', '\n>\n> ')}")
+                    solution = MarkdownExporter.solution_modifier(ques["solution"])
+                    mprint(f"\n> 解释：\n>\n> {solution.replace('\n', '\n>\n> ')}")
             mprint("\n---\n")
         if is_to_file:
             print(f"[log] 已完成对 {obj["part"]} 的 Markdown 导出")
